@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Reservation Success - HotelGo{% endblock %}
+
+{% block content %}
+     <div class="alert alert-danger mt-4">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+  <h2 style="text-align: center">Reservation Successful!</h2>
+  <p style="text-align: center">Thank you for choosing HotelGo. Your reservation has been confirmed.</p>
+  <a href="{% url 'my_reservation' %}">My Reservations</a>
+{% endblock %}
