@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+    <h2>My Hotels</h2>
+    {% if hotels %}
+      <ul>
+        {% for hotel in hotels %}
+          <li><a href="{% url 'hotel_detail' hotel.id %}">{{ hotel.name }}</a></li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>You don't have any hotels yet.</p>
+    {% endif %}
+  </div>
+{% endblock %}
